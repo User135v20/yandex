@@ -1,4 +1,3 @@
-
 def pers(X):
     pers = []
     for _ in range(X):
@@ -50,8 +49,6 @@ def place_inform(places_bool, number_row):
 
 def upgrate_place(places: list, places_Bool):
     j = 0
-    #print(places_Bool)
-    # print('места : \n', places)
     for i in range(6):
         if i == 3:
             j = j + 1
@@ -59,7 +56,6 @@ def upgrate_place(places: list, places_Bool):
             places[j] = "X"
         j = j + 1
     return places
-
 
 
 if __name__ == "__main__":
