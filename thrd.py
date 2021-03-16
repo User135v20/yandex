@@ -11,17 +11,15 @@ def min_dist(list, index, k, n):
         min += int(difference[i])
     return min
 
-
-str = []
+result = []
 str = input()
 str = list(map(int, str.split()))
 n = str[0]
 k = str[1]
 str = input("введите массив: ")
 str = list(map(int, str.split()))
-mas = []
 mas = sorted(str)
 for i in range(n):
     index = mas.index(str[i])
-    str[i] = min_dist(mas,index,k,n)
-print(*str)
+    result.append(min_dist(mas,index,k,n))
+print(*result)
