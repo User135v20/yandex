@@ -1,0 +1,21 @@
+import math
+def Result(N):
+    sum = 0
+    for i in range(2,N-2):
+        sum = sum + (N-1-i)*Multiplier(N-1,i)
+    
+    result = N * (1 + Multiplier(N-1,2)+sum)
+    return result
+def Multiplier(n,k):
+    if n-2 > 0:
+        multiplier = 1
+        for i in range(k,n+1):
+            multiplier = multiplier*i 
+        return multiplier/math.factorial(k)
+    else:
+        return 0
+
+N = int(input("Введите "))
+A = Result(N)
+
+print (A)
