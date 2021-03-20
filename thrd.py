@@ -1,3 +1,4 @@
+
 def my_sort(array) -> list:
     if len(array) == 1:
         return array
@@ -28,26 +29,21 @@ def my_sort(array) -> list:
     return array1+[array[median]]+array2
 
 
-def min_dist(list, index, k, n):
+def min_dist(_list, index, k, n):
     difference = []
     min = 0
 
-    # if index - k == 0:
-    #     start = 0
-    # elif index + k == n:
-    #     fin = n
-    # else:
-    #     start = k
-    #     fin = k
+    start = index - k if index - k > 0 else 0
+    fin = index + k if index + k <= n - 1 else n - 1
 
-    for i in range(-k, k + 1):
-        if index + i < 0 or index + i >= n or i == 0:
+    for i in range(start, fin + 1):
+        if i == index:
             continue
-        else:
-            difference.append(abs(list[index + i] - list[index]))
+        difference.append(abs(_list[i] - _list[index]))
     difference.sort()
+
     for i in range(k):
-        min += int(difference[i])
+        min += (difference[i])
     return min
 
 
